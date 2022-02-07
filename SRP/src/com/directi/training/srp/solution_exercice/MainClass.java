@@ -1,5 +1,7 @@
 package com.directi.training.srp.solution_exercice;
 
+import com.directi.training.srp.solution_exercice.entities.Car;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,14 +12,15 @@ public class MainClass {
                         new Car("3", "Megane", "Renault"));
 
         // CarManager Configuration
-        CarSerializer carSerializer = new CarSerializer(cars);
+        CarSerializer carSerializer = new CarSerializer();
         BestCarLookup bestCarLookup = new BestCarLookup(cars);
         CarDao carDao = new CarDao(cars);
         CarManager carManager = new CarManager(carSerializer, bestCarLookup, carDao);
 
         // Business logic
-        System.out.println("Cars names: " + carManager.getCarsNames()); // display all cars
+        System.out.println("Cars names: " + carManager.getCarsNames(cars)); // display all cars
+        System.out.println("Car 1 name: " + carManager.getCarName(carManager.findCarById("1"))); // display car with id 1
         System.out.println("Best car id: " + carManager.getBestCar().getId()); // display id of the best car
-        System.out.println("Brand of the car with id = 1 : " + carManager.getFromDb("1").getBrand()); // display brand of the car with id = 1
+        System.out.println("Brand of the car with id = 1 : " + carManager.findCarById("1").getBrand()); // display brand of the car with id = 1
     }
 }

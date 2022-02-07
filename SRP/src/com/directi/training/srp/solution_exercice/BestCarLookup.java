@@ -1,8 +1,10 @@
 package com.directi.training.srp.solution_exercice;
 
+import com.directi.training.srp.solution_exercice.entities.Car;
+
 import java.util.List;
 
-public class BestCarLookup {
+public class BestCarLookup implements IBestCarLookup {
     private final List<Car> _cars;
 
     public BestCarLookup(List<Car> cars){

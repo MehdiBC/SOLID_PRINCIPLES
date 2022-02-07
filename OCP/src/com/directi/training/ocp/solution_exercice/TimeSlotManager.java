@@ -1,6 +1,6 @@
 package com.directi.training.ocp.solution_exercice;
 
-public class TimeSlot implements Resource{
+public class TimeSlotManager implements ResourceManager {
     @Override
     public void markFree(int resourceId) {
 

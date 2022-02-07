@@ -1,19 +1,19 @@
 package com.directi.training.ocp.solution_exercice;
 
 public class ResourceAllocator {
-    private final Resource _resource;
+    private final ResourceManager _resourceManager;
 
-    public ResourceAllocator(Resource resource) {
-        this._resource = resource;
+    public ResourceAllocator(ResourceManager resourceManager) {
+        this._resourceManager = resourceManager;
     }
 
     public int allocate(){
-        int resourceId = this._resource.findFree();
-        this._resource.markBusy(resourceId);
+        int resourceId = this._resourceManager.findFree();
+        this._resourceManager.markBusy(resourceId);
         return resourceId;
     }
 
     public void free(int resourceId){
-        this._resource.markFree(resourceId);
+        this._resourceManager.markFree(resourceId);
     }
 }

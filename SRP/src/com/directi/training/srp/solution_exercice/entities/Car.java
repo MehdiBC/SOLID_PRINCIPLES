@@ -1,4 +1,4 @@
-package com.directi.training.srp.solution_exercice;
+package com.directi.training.srp.solution_exercice.entities;
 
 public class Car
 {

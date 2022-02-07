@@ -2,11 +2,9 @@ package com.directi.training.isp.solution_exercice.timed;
 
 import com.directi.training.isp.solution_exercice.Door;
 
-public class TimedDoor implements Door, TimedObject
+public class TimedDoor extends Door implements TimedObject
 {
     private static final int TIME_OUT = 100;
-    private boolean _locked;
-    private boolean _opened;
 
     public TimedDoor(Timer timer)
     {
@@ -14,34 +12,14 @@ public class TimedDoor implements Door, TimedObject
     }
 
     @Override
-    public void lock()
-    {
-        _locked = true;
-    }
-
-    @Override
-    public void unlock()
-    {
-        _locked = false;
-    }
-
-    @Override
-    public void open()
-    {
-        if (!_locked) {
-            _opened = true;
-        }
-    }
-
-    @Override
     public void close()
     {
-        _opened = false;
+        this.setOpened(false);
     }
 
     @Override
     public void timeOutCallback()
     {
-        _locked = true;
+        setLocked(true);
     }
 }

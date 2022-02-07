@@ -1,6 +1,6 @@
 package com.directi.training.ocp.solution_exercice;
 
-public class SpaceSlot implements Resource{
+public class SpaceSlotManager implements ResourceManager {
     @Override
     public void markFree(int resourceId) {
 

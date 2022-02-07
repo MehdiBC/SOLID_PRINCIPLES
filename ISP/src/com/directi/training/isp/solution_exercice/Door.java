@@ -1,11 +1,35 @@
 package com.directi.training.isp.solution_exercice;
 
-public interface Door {
-    void lock();
+public class Door {
+    private boolean _locked;
+    private boolean _opened;
 
-    void unlock();
+    public void setLocked(boolean locked) {
+        this._locked = locked;
+    }
 
-    void open();
+    public void setOpened(boolean opened) {
+        this._opened = opened;
+    }
 
-    void close();
+    public void lock()
+    {
+        _locked = true;
+    }
+
+    public void unlock()
+    {
+        _locked = false;
+    }
+
+    public void open() {
+        if (!_locked) {
+            _opened = true;
+        }
+    }
+
+    public void close()
+    {
+        _opened = false;
+    }
 }
