@@ -6,11 +6,11 @@ import java.io.IOException;
 
 public class MyFileReader implements IReader
 {
-    private String _fileName;
+    private final String _fileName;
 
     public MyFileReader(String fileName)
     {
-        _fileName = fileName;
+        this._fileName = fileName;
     }
 
     @Override

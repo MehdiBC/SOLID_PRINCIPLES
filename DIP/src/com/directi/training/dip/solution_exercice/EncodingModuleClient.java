@@ -4,8 +4,8 @@ import java.io.IOException;
 
 public class EncodingModuleClient
 {
-    final static String BEFORE_ENCRYPTION_FILE = "DIP/src/com/directi/training/dip/solution_exercice/beforeEncryption.txt";
-    final static String AFTER_ENCRYPTION_FILE = "DIP/src/com/directi/training/dip/solution_exercice/afterEncryption.txt";
+    final static String BEFORE_ENCRYPTION_FILE = "DIP/resources/beforeEncoding.txt";
+    final static String AFTER_ENCRYPTION_FILE = "DIP/resources/afterEncoding.txt";
     public static void main(String[] args) throws IOException
     {
         EncodingModule encodingModule = new EncodingModule();

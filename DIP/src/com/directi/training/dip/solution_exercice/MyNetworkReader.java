@@ -5,22 +5,19 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 
-public class MyNetworkReader implements IReader
-{
-    private String _protocol;
-    private String _host;
-    private String _file;
+public class MyNetworkReader implements IReader {
+    private final String _protocol;
+    private final String _host;
+    private final String _file;
 
-    public MyNetworkReader(String protocol, String host, String file)
-    {
-        _protocol = protocol;
-        _host = host;
-        _file = file;
+    public MyNetworkReader(String protocol, String host, String file) {
+        this._protocol = protocol;
+        this._host = host;
+        this._file = file;
     }
 
     @Override
-    public String read() throws IOException
-    {
+    public String read() throws IOException {
         URL url = new URL(_protocol, _host, _file);
         InputStream in = url.openStream();
         InputStreamReader reader = new InputStreamReader(in);
