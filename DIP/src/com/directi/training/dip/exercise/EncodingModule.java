@@ -18,9 +18,9 @@ public class EncodingModule
         BufferedWriter writer = null;
         try {
             reader = new BufferedReader(
-                new FileReader("DIP/src/com/directi/training/dip/exercise/beforeEncoding.txt"));
+                new FileReader("DIP/src/com/directi/training/dip/exercise/beforeEncryption.txt"));
             writer = new BufferedWriter(
-                new FileWriter("DIP/src/com/directi/training/dip/exercise/afterEncoding.txt"));
+                new FileWriter("DIP/src/com/directi/training/dip/exercise/afterEncryption.txt"));
             String aLine;
             while ((aLine = reader.readLine()) != null) {
                 String encodedLine = Base64.getEncoder().encodeToString(aLine.getBytes());
